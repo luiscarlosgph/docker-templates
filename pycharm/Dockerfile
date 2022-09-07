@@ -29,13 +29,19 @@ EXPOSE 22
 RUN useradd -m -p '$6$oSwovnp87Z6VJnch$iWLZ2E995Ogtr6ILOq/Wvq/G/Oni/BGlDAF65GRw1BBhCcQiwFuaOTCloGfZKnafEtBcCDyQH4nbs0CdyI7qB0' -s /bin/zsh docker
 RUN usermod -a -G sudo docker
 RUN sudo -u docker sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-RUN sudo -u docker sed -i 's/robbyrussell/terminalparty/g' /home/docker/.zshrc
-
-# TODO: Install Python environment
+RUN sudo -u docker sed -i 's/robbyrussell/terminalparty/g' "$HOME/.zshrc"
 
 # Add CUDA environment variables to the 'docker' user
-RUN echo 'export PATH=/usr/local/cuda/bin:${PATH}' >> /home/docker/.zshrc
-RUN echo 'export LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH}' >> /home/docker/.zshrc
+RUN echo 'export PATH=/usr/local/cuda/bin:${PATH}' >> "$HOME/.zshrc"
+RUN echo 'export LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH}' >> "$HOME/.zshrc"
+
+# Install Python environment
+ENV PYTHON_VERSION 3.8.6
+RUN sudo -u docker 'git clone https://github.com/pyenv/pyenv.git $HOME/.pyenv'
+RUN sudo -u docker echo 'export PYENV_ROOT="$HOME/.pyenv"' >> "$HOME/.zshrc"
+RUN sudo -u docker echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> "$HOME/.zshrc"
+RUN sudo -u docker echo 'eval "$(pyenv init --path)"' >> "$HOME/.zshrc"
+RUN sudo -u docker pyenv install $PYTHON_VERSION
 
 # Start services and run the user-specified command
 ADD files/entrypoint.sh /opt/entrypoint.sh
