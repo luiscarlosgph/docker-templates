@@ -15,13 +15,15 @@ You can run `$ groups` to check which groups your user belongs to, and `$ usermo
 How to use any of the templates
 -------------------------------
 
-1. Clone this repository: `$ `
+1. Clone this repository: `$ git clone git@github.com:luiscarlosgph/docker-templates.git`
 
-2. Build image: `$ `
+2. Generate the tarball of the image you want to deploy, e.g. `pycharm-mmf`: `$ cd pycharm-mmf && chmod +x ./generate_tarball && ./generate_tarball`
 
-3. Launch container: `$ `
+3. Build image: `$ `
 
-4. Get a terminal of the container: `$ `
+4. Launch container: `$ `
+
+5. Get a terminal of the container: `$ `
 
 List of templates
 -----------------
