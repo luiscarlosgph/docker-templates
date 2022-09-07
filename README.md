@@ -23,8 +23,8 @@ How to use any of the templates
 2. Generate the tarball of the image you want to deploy, e.g. `pycharm-mmf`: 
     ```
     $ cd pycharm-mmf
-    $ chmod +x ./generate_tarball
-    $ ./generate_tarball
+    $ chmod +x ./generate_tarball.sh
+    $ ./generate_tarball.sh
     ```
 
 3. Build image: 
