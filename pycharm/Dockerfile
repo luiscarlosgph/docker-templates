@@ -1,0 +1,44 @@
+# @brief  Image with support for: CUDA, pyenv, PyTorch, and PyCharm.
+# @author Luis C. Garcia Peraza Herrera (luiscarlos.gph@gmail.com).
+# @date   7 September 2022.
+
+# Image info
+FROM nvidia/cuda:10.2-cudnn8-runtime
+LABEL maintainer="luiscarlos.gph@gmail.com"
+LABEL version="0.1"
+LABEL description="Image with support for: CUDA, pyenv, PyTorch, and PyCharm."
+
+# Install commonly used packages
+RUN apt update
+RUN DEBIAN_FRONTEND=noninteractive apt upgrade -y
+RUN DEBIAN_FRONTEND=noninteractive apt install -y aptitude sudo vim zsh wget curl git net-tools tmux locales build-essential cmake build-essential zlib1g-dev libbz2-dev libreadline-dev libssl-dev libsqlite3-dev libffi-dev liblzma-dev tk-dev ncurses-dev
+
+# Install locales
+RUN locale-gen en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
+
+# Install SSH server
+RUN DEBIAN_FRONTEND=noninteractive apt install -y openssh-server
+
+# Open ports
+EXPOSE 22
+
+# Add user 'docker' with password 'docker' and give sudo powers
+RUN useradd -m -p '$6$oSwovnp87Z6VJnch$iWLZ2E995Ogtr6ILOq/Wvq/G/Oni/BGlDAF65GRw1BBhCcQiwFuaOTCloGfZKnafEtBcCDyQH4nbs0CdyI7qB0' -s /bin/zsh docker
+RUN usermod -a -G sudo docker
+RUN sudo -u docker sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+RUN sudo -u docker sed -i 's/robbyrussell/terminalparty/g' /home/docker/.zshrc
+
+# TODO: Install Python environment
+
+# Add CUDA environment variables to the 'docker' user
+RUN echo 'export PATH=/usr/local/cuda/bin:${PATH}' >> /home/docker/.zshrc
+RUN echo 'export LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH}' >> /home/docker/.zshrc
+
+# Start services and run the user-specified command
+ADD files/entrypoint.sh /opt/entrypoint.sh
+RUN chmod +x /opt/entrypoint.sh
+ENTRYPOINT ["/opt/entrypoint.sh"]
+CMD ["sleep infinity"]
