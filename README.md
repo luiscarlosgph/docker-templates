@@ -66,6 +66,7 @@ How to use any of the templates
      ```
      docker exec -it wild_turin /bin/bash 
      ```
+     More info on the parameters of `docker exec` [here](https://docs.docker.com/engine/reference/commandline/exec).
 
 List of templates
 -----------------
