@@ -34,17 +34,19 @@ How to use any of the templates
    
    Syntax: `$ docker import <image_file> <image_name>:<image_tag>`
    
-   For example:
+   For example, for `pycharm-mmf`:
    ```
    $ docker import pycharm-mmf.tar.gz pycharm-mmf:latest
    ```
 
 4. Launch container from image: 
-    ```
-    # docker run --name <container_name> <image_name>:<image_tag>, e.g.:
-    
-    $ docker run --name wild_turin pycharm-mmf:latest 
-    ```
+
+   Syntax: `$ docker run --name <container_name> <image_name>:<image_tag>`
+   
+   For example, for `pycharm-mmf`:
+   ```
+   $ docker run --name wild_turin pycharm-mmf:latest 
+   ```
 
 5. Get a terminal of the container: `$ `
 
