@@ -37,6 +37,7 @@ How to use any of the templates
     ```
     $ docker import pycharm-mmf.tar.gz pycharm-mmf:latest
     ```
+    More info on the parameters of `docker import` [here](https://docs.docker.com/engine/reference/commandline/import).
 
 4. Launch container from image: 
 
