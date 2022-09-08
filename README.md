@@ -29,7 +29,7 @@ How to use any of the templates
 
 3. Build image: 
    ```
-   $
+   $ docker import pycharm-mmf.tar.gz
    ```
 
 4. Launch container: `$ `
