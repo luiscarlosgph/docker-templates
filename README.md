@@ -47,7 +47,14 @@ How to use any of the templates
     $ docker run --name wild_turin pycharm-mmf:latest 
     ```
 
-5. Get a terminal of the container: `$ `
+5. Get a terminal of the container:
+
+    * Syntax: `$ docker exec -it <container_name> <terminal_path>`
+
+     For example:
+     ```
+     docker exec -it wild_turin /bin/bash 
+     ```
 
 List of templates
 -----------------
