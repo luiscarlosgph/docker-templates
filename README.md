@@ -42,7 +42,7 @@ How to use any of the templates
 
    * Syntax: `$ docker run --name <container_name> <image_name>:<image_tag>`
    
-    For example, for `pycharm-mmf`:
+    For example, for the image `pycharm-mmf` and container name `wild_turin`:
     ```
     $ docker run --name wild_turin pycharm-mmf:latest 
     ```
@@ -51,7 +51,7 @@ How to use any of the templates
 
     * Syntax: `$ docker exec -it <container_name> <terminal_path>`
 
-     For example:
+     For example, for the container name `wild_turin`:
      ```
      docker exec -it wild_turin /bin/bash 
      ```
