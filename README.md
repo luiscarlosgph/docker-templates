@@ -30,11 +30,7 @@ How to use any of the templates
     $ ./generate_tarball.sh
     ```
 
-3. Build image: 
-   
-   Syntax: `$ docker import <image_file> <image_name>:<image_tag>`
-   
-   For example, for `pycharm-mmf`:
+3. Build image: `$ docker import <image_file> <image_name>:<image_tag>`, e.g. for `pycharm-mmf`
    ```
    $ docker import pycharm-mmf.tar.gz pycharm-mmf:latest
    ```
