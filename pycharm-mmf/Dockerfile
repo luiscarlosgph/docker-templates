@@ -74,6 +74,10 @@ RUN tar -xf $HOME/pycharm.tar.gz -C $HOME
 RUN rm $HOME/pycharm.tar.gz
 RUN chown -R $USER:$USER $HOME/pycharm*
 
+# Install MMF
+RUN git clone https://github.com/facebookresearch/mmf.git $HOME/mmf
+RUN chown $USER:$USER $HOME/mmf
+RUN sudo -u $USER pip install $HOME/mmf
 
 # Start services and run the user-specified command
 ADD files/entrypoint.sh /opt/entrypoint.sh
