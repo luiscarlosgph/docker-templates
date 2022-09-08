@@ -53,7 +53,7 @@ How to use any of the templates
     **If you run your container with `docker run` as above, you will not be able to run graphical programs (e.g. PyCharm, Matlab) inside the container.
     For these cases you can use [dockerx](https://github.com/luiscarlosgph/dockerx) instead, e.g. to deploy the `pycharm-mmf` image:**
     ```
-    $ python -m dockerx.run --image pycharm-mmf --nvidia 1 --command 'sleep infinity'
+    $ python -m dockerx.run --name widl_turin --image pycharm-mmf --nvidia 1 --command 'sleep infinity'
     ```
     
     [Dockerx](https://github.com/luiscarlosgph/dockerx) allows you to mount volumes and set environment variables using the parameters `--volume` and `--env`, more details [here](https://github.com/luiscarlosgph/dockerx).
