@@ -30,22 +30,50 @@ RUN DEBIAN_FRONTEND=noninteractive apt install -y openssh-server
 EXPOSE 22
 
 # Add user 'docker' with password 'docker' and give sudo powers
-RUN useradd -m -p '$6$oSwovnp87Z6VJnch$iWLZ2E995Ogtr6ILOq/Wvq/G/Oni/BGlDAF65GRw1BBhCcQiwFuaOTCloGfZKnafEtBcCDyQH4nbs0CdyI7qB0' -s /bin/zsh docker
-RUN usermod -a -G sudo docker
-#RUN sudo -u docker sh -c '"$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"'
-RUN sudo -u docker sed -i 's/robbyrussell/terminalparty/g' /home/docker/.zshrc
+ENV USER="docker"
+ENV PASSWD="docker"
+ENV HOME="/home/$USER"
+RUN DEBIAN_FRONTEND=noninteractive apt install -y python3 python3-passlib
+RUN useradd -m -p "$(python3 -c 'import os; import passlib.hash; print(passlib.hash.sha512_crypt.hash(os.getenv("PASSWD")))')" -s /bin/zsh $USER
+RUN usermod -a -G sudo $USER
+RUN touch $HOME/.zshrc && chown $USER:$USER $HOME/.zshrc
+
+# Intall oh-my-zsh so we have a nice terminal
+RUN sudo -u $USER wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O $HOME/install.sh
+RUN sudo -u $USER chmod +x $HOME/install.sh 
+RUN sudo -u $USER $HOME/install.sh --unattended
+RUN sudo -u $USER sed -i 's/robbyrussell/terminalparty/g' $HOME/.zshrc
 
 # Add CUDA environment variables to the 'docker' user
-RUN echo 'export PATH=/usr/local/cuda/bin:${PATH}' >> "$HOME/.zshrc"
-RUN echo 'export LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH}' >> "$HOME/.zshrc"
+RUN echo 'export PATH=/usr/local/cuda/bin:${PATH}' >> $HOME/.zshrc
+RUN echo 'export LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH}' >> $HOME/.zshrc
 
-# Install Python environment
-ENV PYTHON_VERSION 3.8.6
-RUN sudo -u docker 'git clone https://github.com/pyenv/pyenv.git $HOME/.pyenv'
-RUN sudo -u docker echo 'export PYENV_ROOT="$HOME/.pyenv"' >> "$HOME/.zshrc"
-RUN sudo -u docker echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> "$HOME/.zshrc"
-RUN sudo -u docker echo 'eval "$(pyenv init --path)"' >> "$HOME/.zshrc"
-RUN sudo -u docker pyenv install $PYTHON_VERSION
+# Install Python's pyenv environment
+ENV PYTHON_VERSION="3.8.6"
+RUN sudo -u $USER git clone https://github.com/pyenv/pyenv.git $HOME/.pyenv
+RUN sudo -u $USER echo 'export PYENV_ROOT="$HOME/.pyenv"' >> $HOME/.zshrc
+RUN sudo -u $USER echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> $HOME/.zshrc
+RUN sudo -u $USER echo 'eval "$(pyenv init --path)"' >> $HOME/.zshrc
+RUN sudo -u $USER /bin/zsh -c "source $HOME/.zshrc && pyenv install $PYTHON_VERSION"
+RUN sudo -u $USER /bin/zsh -c "source $HOME/.zshrc && pyenv global $PYTHON_VERSION"
+
+# Install PyTorch environment, more versions here: https://pytorch.org/get-started/previous-versions
+ENV PYTORCH_INSTALL_CMD="pip install torch==1.9.0+cu102 torchvision==0.10.0+cu102 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html"
+RUN sudo -u docker /bin/zsh -c "source $HOME/.zshrc && $PYTORCH_INSTALL_CMD"
+
+# Install PyCharm, find the download URL here: 
+#
+#     https://www.jetbrains.com/pycharm/download/#section=linux
+#
+ENV PYCHARM_URL="https://download.jetbrains.com/python/pycharm-community-2022.2.1.tar.gz?_ga=2.138921843.1526431454.1662563748-1029168239.1662563748&_gl=1*n1b0l0*_ga*MTAyOTE2ODIzOS4xNjYyNTYzNzQ4*_ga_9J976DJZ68*MTY2MjY0OTEwMy4zLjEuMTY2MjY0OTE3My4wLjAuMA.."
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y openjdk-8-jdk ant ca-certificates-java
+RUN update-ca-certificates -f
+RUN sudo -u $USER echo 'export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"' >> $HOME/.zshrc
+RUN wget $PYCHARM_URL -O $HOME/pycharm.tar.gz
+RUN tar -xf $HOME/pycharm.tar.gz -C $HOME
+RUN rm $HOME/pycharm.tar.gz
+RUN chown -R $USER:$USER $HOME/pycharm*
+
 
 # Start services and run the user-specified command
 ADD files/entrypoint.sh /opt/entrypoint.sh
