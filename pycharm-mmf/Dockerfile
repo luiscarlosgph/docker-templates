@@ -59,7 +59,7 @@ RUN sudo -u $USER /bin/zsh -c "source $HOME/.zshrc && pyenv global $PYTHON_VERSI
 
 # Install PyTorch environment, more versions here: https://pytorch.org/get-started/previous-versions
 ENV PYTORCH_INSTALL_CMD="pip install torch==1.9.0+cu102 torchvision==0.10.0+cu102 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html"
-RUN sudo -u docker /bin/zsh -c "source $HOME/.zshrc && $PYTORCH_INSTALL_CMD"
+RUN sudo -u $USER /bin/zsh -c "source $HOME/.zshrc && $PYTORCH_INSTALL_CMD"
 
 # Install PyCharm, find the download URL here: 
 #
