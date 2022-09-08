@@ -46,6 +46,11 @@ How to use any of the templates
     ```
     $ docker run --name wild_turin pycharm-mmf:latest 
     ```
+    
+    If you plan to run graphical programs inside your container (e.g. PyCharm, Matlab), you can use the [dockerx](https://github.com/luiscarlosgph/dockerx) package, and run your container with:
+    ```
+    $ python -m dockerx.run --image pycharm-mmf --nvidia 1 --command 'sleep infinity'
+    ```
 
 5. Get a terminal of the container:
 
