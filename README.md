@@ -7,7 +7,7 @@ Dockerfile respository for different tasks.
 Prerequisites
 -------------
 
-* Follow [this](https://github.com/luiscarlosgph/how-to/docker) guide to install Docker.
+* Follow [this](https://github.com/luiscarlosgph/how-to/tree/main/docker) guide to install Docker.
 
 <!--
 As usual when working with Docker, your user needs to be member of the `docker` group.
