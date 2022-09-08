@@ -77,7 +77,7 @@ RUN chown -R $USER:$USER $HOME/pycharm*
 # Install MMF
 RUN git clone https://github.com/facebookresearch/mmf.git $HOME/mmf
 RUN chown $USER:$USER $HOME/mmf
-RUN sudo -u $USER pip install $HOME/mmf
+RUN sudo -u $USER /bin/zsh -c "source $HOME/.zshrc && pip install $HOME/mmf"
 
 # Start services and run the user-specified command
 ADD files/entrypoint.sh /opt/entrypoint.sh
