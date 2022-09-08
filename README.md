@@ -30,12 +30,19 @@ How to use any of the templates
     $ ./generate_tarball.sh
     ```
 
-3. Build image, e.g. for `pycharm-mmf`: 
+3. Build image: 
    ```
-   $ docker import pycharm-mmf.tar.gz
+   # $ docker import <image_file> <image_name>:<image_tag>, e.g.:
+   
+   $ docker import pycharm-mmf.tar.gz pycharm-mmf:latest
    ```
 
-4. Launch container: `$ `
+4. Launch container from image: 
+    ```
+    # docker run --name <container_name> <image_name>:<image_tag>, e.g.:
+    
+    $ docker run --name wild_turin pycharm-mmf:latest 
+    ```
 
 5. Get a terminal of the container: `$ `
 
