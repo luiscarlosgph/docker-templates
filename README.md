@@ -31,9 +31,8 @@ How to use any of the templates
     ```
 
 3. Build image: 
+   Syntax: `$ docker import <image_file> <image_name>:<image_tag>`, e.g.:
    ```
-   # $ docker import <image_file> <image_name>:<image_tag>, e.g.:
-   
    $ docker import pycharm-mmf.tar.gz pycharm-mmf:latest
    ```
 
