@@ -61,7 +61,7 @@ How to use any of the templates
     
     The syntax is `--volume <source_path_in_host>:<target_path_in_container>`. For example, `--volume /home/jdoe/datasets:/home/docker/datasets`. 
     
-    Similarly, you can add as many environment variables as you like with `--env`. The syntax is `--env "<key>=<value>"`. For example, `--env "PATH=/usr/local/cuda/bin:$PATH"`.
+    Similarly, you can add as many environment variables as you like with `--env`. The syntax is `--env '<key>=<value>'`. For example, `--env 'PATH=/usr/local/cuda/bin:$PATH'`.
 
 5. Get a terminal of the container:
 
