@@ -56,7 +56,7 @@ How to use any of the templates
     $ python -m dockerx.run --name wild_turin --image pycharm-mmf --nvidia 1 --command 'sleep infinity'
     ```
     
-    [Dockerx](https://github.com/luiscarlosgph/dockerx) allows you to mount volumes and set environment variables using the parameters `--volume` and `--env`, more details [here](https://github.com/luiscarlosgph/dockerx).
+    [Dockerx](https://github.com/luiscarlosgph/dockerx) allows you to mount volumes and set environment variables using the parameters `--volume` and `--env`, more details [here](https://github.com/luiscarlosgph/dockerx). You can use as many `--volume`` parameters as you like. The syntax is `--volume <source_in_host>:<target_in_container>`.
 
 5. Get a terminal of the container:
 
