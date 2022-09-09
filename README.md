@@ -56,7 +56,7 @@ How to use any of the templates
     $ python -m dockerx.run --name wild_turin --image pycharm-mmf --nvidia 1 --command 'sleep infinity'
     ```
     
-    [Dockerx](https://github.com/luiscarlosgph/dockerx) allows you to mount volumes and set environment variables using the parameters `--volume` and `--env`. <!-- You can find more details about the parameters [here](https://github.com/luiscarlosgph/dockerx). -->
+    [Dockerx](https://github.com/luiscarlosgph/dockerx) also allows you to mount volumes and set environment variables using the parameters `--volume` and `--env`. <!-- You can find more details about the parameters [here](https://github.com/luiscarlosgph/dockerx). -->
     You can use as many `--volume` and `--env` parameters as you like. 
     
     The syntax is `--volume '<source_path_in_host>:<target_path_in_container>'`. For example, `--volume '/home/jdoe/datasets:/home/docker/datasets'`. 
