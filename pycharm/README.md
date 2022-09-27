@@ -38,4 +38,6 @@ Configure container's PyCharm
 
 This Docker image comes with `pyenv` already installed in the container. `pyenv` allows you to easily change the Python version. More info [here](https://github.com/luiscarlosgph/how-to/tree/main/pyenv).
 
-The first time you run this image you have to configure PyCharm to use `pyenv`.
+The first time you run this image you have to configure PyCharm to use the `pyenv` Python interpreter:
+
+![pycharm_config](https://user-images.githubusercontent.com/3996630/192641199-f43e0a9e-d44f-4c7c-9669-1e73cffc7a65.png)
