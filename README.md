@@ -33,13 +33,13 @@ How to use any of the templates
 -->
 
 2. Build image you want to deploy: 
-   * Syntax: `$ docker built -t <image_name>:<image_tag> <path_to> `
+   * Syntax: `$ docker built -t <image_name>:<image_tag> <path_to_image_dir> `
    
     For example, for `pycharm-mmf`:
     ```
-    $ docker build -t pycharm-mmf:latest pycharm-mmf
+    $ docker build -t pycharm-mmf:latest ./pycharm-mmf
     ```
-    More info on the parameters of `docker import` [here](https://docs.docker.com/engine/reference/commandline/import).
+    More info on the parameters of `docker build` [here](https://docs.docker.com/engine/reference/commandline/build).
 
 3. Launch container from image: 
 
