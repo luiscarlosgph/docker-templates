@@ -3,6 +3,8 @@ Description
 
 Image that contains a PyCharm development environment with CUDA support.
 
+This image uses Python version 3.8.6 and CUDA version 
+
 How to deploy it
 ----------------
 ```bash
