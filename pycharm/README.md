@@ -12,7 +12,9 @@ How to deploy it
 Run the image
 -------------
 
-TODO
+1. Install **dockerx** following the instructions [here](). This is necessary to run a GUI within a container in an easy way.
+
+2. Run PyCharm container: `TODO`
 
 Configure container's PyCharm
 -----------------------------
