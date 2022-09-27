@@ -23,14 +23,6 @@ How to use any of the templates
     $ git clone git@github.com:luiscarlosgph/docker-templates.git
     $ cd docker-templates
     ```
-<!--
-2. Generate the tarball of the image you want to deploy, e.g. for `pycharm-mmf`: 
-    ```
-    $ cd pycharm-mmf
-    $ chmod +x ./generate_tarball.sh
-    $ ./generate_tarball.sh
-    ```
--->
 
 2. Build image you want to deploy: 
     ```
