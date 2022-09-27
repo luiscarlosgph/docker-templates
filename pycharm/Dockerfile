@@ -1,4 +1,4 @@
-# @brief  Image with support for: CUDA, pyenv, PyCharm.
+# @brief  Image with support for: CUDA, pyenv, and PyCharm.
 # @author Luis C. Garcia Peraza Herrera (luiscarlos.gph@gmail.com).
 # @date   27 September 2022.
 
@@ -6,7 +6,7 @@
 FROM nvidia/cuda:10.2-cudnn8-runtime
 LABEL maintainer="luiscarlos.gph@gmail.com"
 LABEL version="0.1"
-LABEL description="Image with support for: CUDA, pyenv, PyCharm."
+LABEL description="Image with support for: CUDA, pyenv, and PyCharm."
 
 # Install NVIDIA repository keys
 RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub 134
