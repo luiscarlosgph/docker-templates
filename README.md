@@ -50,7 +50,7 @@ How to use any of the templates
     
     More info on the parameters of `docker run` (e.g. to mount volumes from your host system) [here](https://docs.docker.com/engine/reference/run).
     
-    If you run your container with `docker run` as above, you will not be able to run graphical programs (e.g. PyCharm, Matlab) inside the container.
+    If you run your container with `docker run` as above, you will not be able to run graphical programs (e.g. PyCharm, MATLAB) inside the container.
     For these cases you can use [dockerx](https://github.com/luiscarlosgph/dockerx) instead, e.g. to deploy the `pycharm-mmf` image:
     ```
     $ python -m dockerx.run --name wild_turin --image pycharm-mmf --nvidia 1 --command 'sleep infinity'
