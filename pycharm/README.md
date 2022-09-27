@@ -22,10 +22,13 @@ $ python3 -m dockerx.run --name wild_pycharm --image luiscarlosgph/pycharm:lates
 ```
 You can change the name of the container from `wild_pycharm` to whatever you want, but make sure you use the same name in the next step.
 
-
-3. Run PyCharm within container: 
+3. Get a terminal in the container:
 ```bash
 $ docker exec -it wild_pycharm /bin/bash 
+```
+
+4. Run PyCharm within container: 
+```bash
 $ cd /home/docker
 $ pycharm/bin/pycharm.sh
 ```
