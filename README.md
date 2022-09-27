@@ -75,7 +75,7 @@ How to use any of the templates
 
     * Syntax: `$ docker exec -it <container_name> <terminal_path>`
 
-     For example, for the container name `wild_turin`:
+     For example, for the container named `wild_turin`:
      ```
      docker exec -it wild_turin /bin/bash 
      ```
