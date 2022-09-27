@@ -40,7 +40,7 @@ How to use any of the templates
     <!--More info on the parameters of `docker build` [here](https://docs.docker.com/engine/reference/commandline/build).-->
 
 3. Launch container from image: 
-
+   <!--
    * Syntax: `$ docker run --name <container_name> <image_name>:<image_tag>`
    
     For example, for the image `pycharm-mmf` and container name `wild_turin`:
@@ -52,6 +52,7 @@ How to use any of the templates
     
     If you run your container with `docker run` as above, you will not be able to run graphical programs (e.g. PyCharm, MATLAB) inside the container.
     For these cases you can use [dockerx](https://github.com/luiscarlosgph/dockerx) instead, e.g. to deploy the `pycharm-mmf` image:
+   -->
     ```
     $ python -m dockerx.run --name wild_turin --image pycharm-mmf --nvidia 1 --command 'sleep infinity'
     ```
