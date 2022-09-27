@@ -3,15 +3,20 @@ Description
 
 Image that contains a PyCharm development environment with CUDA support.
 
-How to deploy it
-----------------
+How to deploy it from DockerHub
+-------------------------------
 
-1. Follow the instructions [here](https://github.com/luiscarlosgph/docker-templates#how-to-use-any-of-the-templates) to build the image.
+How to deploy it from source
+----------------------------
 
-2. Run the image: 
+Follow the instructions [here](https://github.com/luiscarlosgph/docker-templates#how-to-use-any-of-the-templates) to build the image.
+
+Run the image
+-------------
 
 TODO
 
-3. Configure PyCharm:
+Configure container's PyCharm
+-----------------------------
 
 TODO
