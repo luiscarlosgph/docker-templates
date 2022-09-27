@@ -57,7 +57,7 @@ How to use any of the templates
     ```
     
     [dockerx](https://github.com/luiscarlosgph/dockerx) also allows you to mount volumes and set environment variables using the parameters `--volume` and `--env`. <!-- You can find more details about the parameters [here](https://github.com/luiscarlosgph/dockerx). -->
-    You can use as many `--volume` and `--env` parameters as you like. More info [here](https://github.com/luiscarlosgph/dockerx).
+    More info [here](https://github.com/luiscarlosgph/dockerx).
     
     <!--
     The syntax is `--volume '<source_path_in_host>:<target_path_in_container>'`. For example, `--volume '/home/jdoe/datasets:/home/docker/datasets'`. 
