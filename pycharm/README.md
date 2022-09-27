@@ -6,6 +6,7 @@ Image that contains a PyCharm development environment with CUDA support.
 How to deploy it
 ----------------
 ```bash
+$ chmod +x build.sh
 $ ./build.sh
 ```
 
