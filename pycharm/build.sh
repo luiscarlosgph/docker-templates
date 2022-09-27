@@ -1,4 +1,7 @@
 #!/bin/bash
 
-echo `id -u` files/uid.txt
-docker build -t pycharm:latest .
+# Get id of the running user
+echo `id -u` > files/uid.txt
+
+# Build image for that user to run X11 applications
+docker build -t $1 .
