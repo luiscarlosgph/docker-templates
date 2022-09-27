@@ -24,7 +24,7 @@ How to use any of the templates
     $ cd docker-templates
     ```
 
-2. Build image you want to deploy: 
+2. Build the image you want to deploy: 
     ```
     $ cd <image_dir>
     $ chmod +x build.sh
