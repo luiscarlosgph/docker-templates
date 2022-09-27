@@ -33,8 +33,9 @@ EXPOSE 22
 ENV USER="docker"
 ENV PASSWD="docker"
 ENV HOME="/home/$USER"
+ADD files/uid.txt /tmp/uid.txt
 RUN DEBIAN_FRONTEND=noninteractive apt install -y python3 python3-passlib
-RUN useradd -m -p "$(python3 -c 'import os; import passlib.hash; print(passlib.hash.sha512_crypt.hash(os.getenv("PASSWD")))')" -s /bin/zsh $USER
+RUN useradd -m -u $(cat /tmp/uid.txt) -g $(cat /tmp/uid.txt) -p "$(python3 -c 'import os; import passlib.hash; print(passlib.hash.sha512_crypt.hash(os.getenv("PASSWD")))')" -s /bin/zsh $USER
 RUN usermod -a -G sudo $USER
 RUN touch $HOME/.zshrc && chown $USER:$USER $HOME/.zshrc
 
@@ -68,7 +69,8 @@ RUN sudo -u $USER echo 'export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"' >>
 RUN wget $PYCHARM_URL -O $HOME/pycharm.tar.gz
 RUN tar -xf $HOME/pycharm.tar.gz -C $HOME
 RUN rm $HOME/pycharm.tar.gz
-RUN chown -R $USER:$USER $HOME/pycharm*
+RUN mv $HOME/pycharm-* $HOME/pycharm
+RUN chown -R $USER:$USER $HOME/pycharm
 
 # Start services and run the user-specified command
 ADD files/entrypoint.sh /opt/entrypoint.sh
