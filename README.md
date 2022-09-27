@@ -30,7 +30,7 @@ How to use any of the templates
     $ chmod +x build.sh
     $ ./build.sh
     ```
-   
+    
     For example, for `pycharm-mmf`:
     ```
     $ cd pycharm-mmf
@@ -53,6 +53,11 @@ How to use any of the templates
     If you run your container with `docker run` as above, you will not be able to run graphical programs (e.g. PyCharm, MATLAB) inside the container.
     For these cases you can use [dockerx](https://github.com/luiscarlosgph/dockerx) instead, e.g. to deploy the `pycharm-mmf` image:
    -->
+    ```
+    $ python -m dockerx.run --name wild_turin --image <image_name> --nvidia 1 --command 'sleep infinity'
+    ```
+    
+    For example, for `pycharm-mmf`:
     ```
     $ python -m dockerx.run --name wild_turin --image pycharm-mmf --nvidia 1 --command 'sleep infinity'
     ```
