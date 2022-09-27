@@ -21,25 +21,27 @@ How to use any of the templates
 1. Clone this repository: 
     ```
     $ git clone git@github.com:luiscarlosgph/docker-templates.git
+    $ cd docker-templates
     ```
-
+<!--
 2. Generate the tarball of the image you want to deploy, e.g. for `pycharm-mmf`: 
     ```
     $ cd pycharm-mmf
     $ chmod +x ./generate_tarball.sh
     $ ./generate_tarball.sh
     ```
+-->
 
-3. Build image: 
-   * Syntax: `$ docker import <image_file> <image_name>:<image_tag>`
+2. Build image you want to deploy: 
+   * Syntax: `$ docker built -t <image_name>:<image_tag> <path_to_image_dir> `
    
     For example, for `pycharm-mmf`:
     ```
-    $ docker import pycharm-mmf.tar.gz pycharm-mmf:latest
+    $ docker build -t pycharm-mmf:latest ./pycharm-mmf
     ```
-    More info on the parameters of `docker import` [here](https://docs.docker.com/engine/reference/commandline/import).
+    More info on the parameters of `docker build` [here](https://docs.docker.com/engine/reference/commandline/build).
 
-4. Launch container from image: 
+3. Launch container from image: 
 
    * Syntax: `$ docker run --name <container_name> <image_name>:<image_tag>`
    
@@ -63,7 +65,7 @@ How to use any of the templates
     
     Similarly, you can add as many environment variables as you like with `--env`. The syntax is `--env '<key>=<value>'`. For example, `--env 'PATH=/usr/local/cuda/bin:$PATH'`.
 
-5. Get a terminal of the container:
+4. Get a terminal of the container:
 
     * Syntax: `$ docker exec -it <container_name> <terminal_path>`
 
