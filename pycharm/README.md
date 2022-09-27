@@ -5,8 +5,9 @@ Image that contains a PyCharm development environment with CUDA support.
 
 How to deploy it from DockerHub
 -------------------------------
-
-TODO
+```
+$ docker pull luiscarlosgph/pycharm:latest
+```
 
 How to deploy it from source
 ----------------------------
