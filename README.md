@@ -28,14 +28,14 @@ How to use any of the templates
     ```
     $ cd <image_dir>
     $ chmod +x build.sh
-    $ ./build.sh
+    $ ./build.sh <image_name>
     ```
     
     For example, for `pycharm-mmf`:
     ```
     $ cd pycharm-mmf
     $ chmod +x build.sh
-    $ ./build.sh
+    $ ./build.sh luiscarlosgph/pycharm:latest
     ```
     <!--More info on the parameters of `docker build` [here](https://docs.docker.com/engine/reference/commandline/build).-->
 
