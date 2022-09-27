@@ -7,10 +7,7 @@ How to deploy it
 ----------------
 * **From DockerHub**: `$ docker pull luiscarlosgph/pycharm:latest`
 
-* **From this git repo**:
-  ```bash
-  TODO
-  ```
+* **From this git repo**: `$ ./build.sh`
 
 Run the image
 -------------
