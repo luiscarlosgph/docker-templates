@@ -8,6 +8,7 @@ Prerequisites
 -------------
 
 * **Docker**: follow [this](https://github.com/luiscarlosgph/how-to/tree/main/docker) guide to install it.
+* **dockerx**: follow [this](https://github.com/luiscarlosgph/dockerx) guide to install it.
 
 <!--
 As usual when working with Docker, your user needs to be member of the `docker` group.
