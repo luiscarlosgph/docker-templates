@@ -39,7 +39,7 @@ How to use any of the templates
     ```
     <!--More info on the parameters of `docker build` [here](https://docs.docker.com/engine/reference/commandline/build).-->
 
-3. Launch container from image: 
+3. Launch container: 
    <!--
    * Syntax: `$ docker run --name <container_name> <image_name>:<image_tag>`
    
