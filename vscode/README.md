@@ -11,7 +11,7 @@ How to deploy it
 $ chmod +x build.sh
 $ ./build.sh luiscarlosgph/pycharm:latest
 ```
-You can change `luiscarlosgph/pycharm:latest` and choose your favourite name for the image, e.g. simply `charm:latest` or `johndoe/pycharm:latest`.
+You can change `luiscarlosgph/vscode:latest` and choose your favourite name for the image, e.g. simply `code:latest` or `johndoe/vscode:latest`.
 
 Run the image
 -------------
