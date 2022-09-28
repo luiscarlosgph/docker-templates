@@ -31,7 +31,7 @@ You can change the name of the container from `wild_vscode` to whatever you want
 $ docker exec -it wild_vscode /bin/bash 
 ```
 
-3. Run vscode within container: 
+3. Run Visual Studio Code within container: 
 ```bash
 $ su docker  # the password is 'docker'
 $ cd /home/docker
