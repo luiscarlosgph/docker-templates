@@ -44,13 +44,3 @@ Configure container's Visual Studio Code
 This Docker image comes with `pyenv` already installed in the container. `pyenv` allows you to easily change the Python version you are using for your user within the container. More info [here](https://github.com/luiscarlosgph/how-to/tree/main/pyenv).
 
 When you create a new project, you have to configure vscode to use the `pyenv` Python interpreter. To do so, ...
-
-
-Configure container's PyCharm
------------------------------
-
-This Docker image comes with `pyenv` already installed in the container. `pyenv` allows you to easily change the Python version you are using for your user within the container. More info [here](https://github.com/luiscarlosgph/how-to/tree/main/pyenv).
-
-When you create a new project, you have to configure PyCharm to use the `pyenv` Python interpreter. To do so, select `Previously configured interpreter`, then click on the dropdown `Add Interpreter`, select `System Interpreter`, and navigate to `~/.pyenv/shims/python`. The result should look like this:
-
-![pycharm_config](https://user-images.githubusercontent.com/3996630/192641199-f43e0a9e-d44f-4c7c-9669-1e73cffc7a65.png)
