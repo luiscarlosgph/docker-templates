@@ -38,6 +38,14 @@ $ cd /home/docker
 $ pycharm/bin/pycharm.sh
 ```
 
+Configure container's Visual Studio Code
+----------------------------------------
+
+This Docker image comes with `pyenv` already installed in the container. `pyenv` allows you to easily change the Python version you are using for your user within the container. More info [here](https://github.com/luiscarlosgph/how-to/tree/main/pyenv).
+
+When you create a new project, you have to configure vscode to use the `pyenv` Python interpreter. To do so, ...
+
+
 Configure container's PyCharm
 -----------------------------
 
