@@ -89,10 +89,17 @@ List of templates
 If you click on any template below, you will see a guide on how to use it.
 
 * [pycharm](pycharm): development environment with [CUDA](https://developer.nvidia.com/cuda-toolkit) + [pyenv](https://github.com/pyenv/pyenv) + [PyCharm](https://www.jetbrains.com/pycharm/download)
+
 * [vscode](pycharm): development environment with [CUDA](https://developer.nvidia.com/cuda-toolkit) + [pyenv](https://github.com/pyenv/pyenv) + [vscode](https://code.visualstudio.com)
+
 * [pytorch](pytorch): development environment with [CUDA](https://developer.nvidia.com/cuda-toolkit) + [pyenv](https://github.com/pyenv/pyenv) + [PyTorch](https://pytorch.org/get-started/locally)
+
 * [pytorch-with-charm](pytorch-with-charm): development environment with [CUDA](https://developer.nvidia.com/cuda-toolkit) + [pyenv](https://github.com/pyenv/pyenv) + [PyTorch](https://pytorch.org/get-started/locally) + [PyCharm](https://www.jetbrains.com/pycharm/download)
+
+* [pytorch-with-charm-mmf](pytorch-with-charm-mmf): development environment with [CUDA](https://developer.nvidia.com/cuda-toolkit) + [pyenv](https://github.com/pyenv/pyenv) + [PyTorch](https://pytorch.org/get-started/locally) + [PyCharm](https://www.jetbrains.com/pycharm/download) + [MMF](https://mmf.sh)
+
 * [pytorch-with-vscode](pytorch-with-vscode): development environment with [CUDA](https://developer.nvidia.com/cuda-toolkit) + [pyenv](https://github.com/pyenv/pyenv) + [PyTorch](https://pytorch.org/get-started/locally) + [vscode](https://code.visualstudio.com)
+
 <!--
 * [python](python): Development environment with [CUDA](https://developer.nvidia.com/cuda-toolkit) + [pyenv](https://github.com/pyenv/pyenv)
 -->
