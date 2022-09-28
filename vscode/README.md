@@ -35,7 +35,7 @@ $ docker exec -it wild_vscode /bin/bash
 ```bash
 $ su docker  # the password is 'docker'
 $ cd /home/docker
-$ code
+$ code --no-sandbox
 ```
 
 Configure container's Visual Studio Code
