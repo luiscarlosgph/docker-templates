@@ -22,20 +22,20 @@ Run the image
 
 1. Launch container: 
 ```bash
-$ python3 -m dockerx.run --name wild_pycharm --image luiscarlosgph/pycharm:latest --nvidia 1 --command 'sleep infinity'
+$ python3 -m dockerx.run --name wild_vscode --image luiscarlosgph/pycharm:latest --nvidia 1 --command 'sleep infinity'
 ```
-You can change the name of the container from `wild_pycharm` to whatever you want, but make sure you use the same name in the next step.
+You can change the name of the container from `wild_vscode` to whatever you want, but make sure you use the same name in the next step.
 
 2. Get a terminal in the container:
 ```bash
-$ docker exec -it wild_pycharm /bin/bash 
+$ docker exec -it wild_vscode /bin/bash 
 ```
 
 3. Run PyCharm within container: 
 ```bash
 $ su docker  # the password is 'docker'
 $ cd /home/docker
-$ pycharm/bin/pycharm.sh
+$ code
 ```
 
 Configure container's Visual Studio Code
