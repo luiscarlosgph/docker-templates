@@ -33,7 +33,7 @@ $ docker exec -it wild_pycharm /bin/bash
 
 3. Run PyCharm within container: 
 ```bash
-$ su docker
+$ su docker  # the password is 'docker'
 $ cd /home/docker
 $ pycharm/bin/pycharm.sh
 ```
