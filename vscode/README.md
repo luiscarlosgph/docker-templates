@@ -22,7 +22,7 @@ Run the image
 
 1. Launch container: 
 ```bash
-$ python3 -m dockerx.run --name wild_vscode --image luiscarlosgph/pycharm:latest --nvidia 1 --command 'sleep infinity'
+$ python3 -m dockerx.run --name wild_vscode --image luiscarlosgph/vscode:latest --nvidia 1 --command 'sleep infinity'
 ```
 You can change the name of the container from `wild_vscode` to whatever you want, but make sure you use the same name in the next step.
 
