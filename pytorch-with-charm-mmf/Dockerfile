@@ -1,12 +1,12 @@
-# @brief  Image with support for: CUDA, pyenv, PyTorch, and PyCharm.
+# @brief  Image with support for: CUDA, pyenv, PyTorch, PyCharm, and MMF.
 # @author Luis C. Garcia Peraza Herrera (luiscarlos.gph@gmail.com).
-# @date   7 September 2022.
+# @date   28 September 2022.
 
 # Image info
 FROM nvidia/cuda:10.2-cudnn8-runtime
 LABEL maintainer="luiscarlos.gph@gmail.com"
 LABEL version="0.1"
-LABEL description="Image with support for: CUDA, pyenv, PyTorch, and PyCharm."
+LABEL description="Image with support for: CUDA, pyenv, PyTorch, PyCharm, and MMF."
 
 # Install NVIDIA repository keys
 RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub 134
@@ -33,8 +33,10 @@ EXPOSE 22
 ENV USER="docker"
 ENV PASSWD="docker"
 ENV HOME="/home/$USER"
+ADD files/uid.txt /tmp/uid.txt
 RUN DEBIAN_FRONTEND=noninteractive apt install -y python3 python3-passlib
-RUN useradd -m -p "$(python3 -c 'import os; import passlib.hash; print(passlib.hash.sha512_crypt.hash(os.getenv("PASSWD")))')" -s /bin/zsh $USER
+RUN groupadd -g $(cat /tmp/uid.txt) $USER
+RUN useradd -m -u $(cat /tmp/uid.txt) -g $(cat /tmp/uid.txt) -p "$(python3 -c 'import os; import passlib.hash; print(passlib.hash.sha512_crypt.hash(os.getenv("PASSWD")))')" -s /bin/zsh $USER
 RUN usermod -a -G sudo $USER
 RUN touch $HOME/.zshrc && chown $USER:$USER $HOME/.zshrc
 
@@ -61,6 +63,11 @@ RUN sudo -u $USER /bin/zsh -c "source $HOME/.zshrc && pyenv global $PYTHON_VERSI
 ENV PYTORCH_INSTALL_CMD="pip install torch==1.9.0+cu102 torchvision==0.10.0+cu102 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html"
 RUN sudo -u $USER /bin/zsh -c "source $HOME/.zshrc && $PYTORCH_INSTALL_CMD"
 
+# Install MMF
+RUN git clone https://github.com/facebookresearch/mmf.git $HOME/mmf
+RUN chown $USER:$USER $HOME/mmf
+RUN sudo -u $USER /bin/zsh -c "source $HOME/.zshrc && pip install $HOME/mmf"
+
 # Install PyCharm, find the download URL here: 
 #
 #     https://www.jetbrains.com/pycharm/download/#section=linux
@@ -72,12 +79,8 @@ RUN sudo -u $USER echo 'export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"' >>
 RUN wget $PYCHARM_URL -O $HOME/pycharm.tar.gz
 RUN tar -xf $HOME/pycharm.tar.gz -C $HOME
 RUN rm $HOME/pycharm.tar.gz
-RUN chown -R $USER:$USER $HOME/pycharm*
-
-# Install MMF
-RUN git clone https://github.com/facebookresearch/mmf.git $HOME/mmf
-RUN chown $USER:$USER $HOME/mmf
-RUN sudo -u $USER /bin/zsh -c "source $HOME/.zshrc && pip install $HOME/mmf"
+RUN mv $HOME/pycharm-* $HOME/pycharm
+RUN chown -R $USER:$USER $HOME/pycharm
 
 # Start services and run the user-specified command
 ADD files/entrypoint.sh /opt/entrypoint.sh
