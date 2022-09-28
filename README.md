@@ -29,7 +29,7 @@ How to use any of the templates
     ```
     $ cd <image_dir>
     $ chmod +x build.sh
-    $ ./build.sh <image_name>
+    $ ./build.sh <your_favourite_image_name>
     ```
     
     For example, for `pycharm-mmf`:
