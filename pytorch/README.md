@@ -33,10 +33,17 @@ $ docker exec -it wild_pytorch /bin/bash
 
 3. Run Python within container: 
 ```bash
-$ su docker
+$ su docker  # the password is 'docker'
 $ cd /home/docker
 $ python
-TODO
+Python 3.8.6 (default, Sep 28 2022, 15:20:28) 
+[GCC 7.5.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import torch
+>>> torch.__version__
+'1.9.0+cu102'
+>>> torch.cuda.is_available()
+True
 ```
 
 This Docker image comes with `pyenv` already installed in the container. `pyenv` allows you to easily change the Python version you are using for your user within the container. More info [here](https://github.com/luiscarlosgph/how-to/tree/main/pyenv).
