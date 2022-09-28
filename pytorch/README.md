@@ -31,7 +31,7 @@ You can change the name of the container from `wild_pytorch` to whatever you wan
 $ docker exec -it wild_pytorch /bin/bash 
 ```
 
-3. Run PyCharm within container: 
+3. Run Python within container: 
 ```bash
 $ cd /home/docker
 $ pycharm/bin/pytorch.sh
