@@ -9,7 +9,7 @@ How to deploy it
 ----------------
 ```bash
 $ chmod +x build.sh
-$ ./build.sh luiscarlosgph/pycharm:latest
+$ ./build.sh luiscarlosgph/vscode:latest
 ```
 You can change `luiscarlosgph/vscode:latest` and choose your favourite name for the image, e.g. simply `code:latest` or `johndoe/vscode:latest`.
 
