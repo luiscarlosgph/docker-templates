@@ -33,8 +33,10 @@ $ docker exec -it wild_pytorch /bin/bash
 
 3. Run Python within container: 
 ```bash
+$ su docker
 $ cd /home/docker
-$ pycharm/bin/pytorch.sh
+$ python
+TODO
 ```
 
 This Docker image comes with `pyenv` already installed in the container. `pyenv` allows you to easily change the Python version you are using for your user within the container. More info [here](https://github.com/luiscarlosgph/how-to/tree/main/pyenv).
