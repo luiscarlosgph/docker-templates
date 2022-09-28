@@ -38,6 +38,7 @@ How to use any of the templates
     $ chmod +x build.sh
     $ ./build.sh luiscarlosgph/pycharm:latest
     ```
+    You do not need to follow the `luiscarlosgph/pycharm:latest` syntax, you can simply write `whatever` as name of the image.
     <!--More info on the parameters of `docker build` [here](https://docs.docker.com/engine/reference/commandline/build).-->
 
 3. Launch container: 
