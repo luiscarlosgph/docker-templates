@@ -91,9 +91,7 @@ If you click on any template below, you will see a guide on how to use it.
 * [python](python): Development environment with [CUDA](https://developer.nvidia.com/cuda-toolkit) + [pyenv](https://github.com/pyenv/pyenv)
 -->
 * [pycharm](pycharm): Development environment with [CUDA](https://developer.nvidia.com/cuda-toolkit) + [pyenv](https://github.com/pyenv/pyenv) + [PyCharm](https://www.jetbrains.com/pycharm/download)
-<!--
 * [pytorch](pytorch): Development environment with [CUDA](https://developer.nvidia.com/cuda-toolkit) + [pyenv](https://github.com/pyenv/pyenv) + [PyTorch](https://pytorch.org/get-started/locally)
--->
 <!--
 * [vscode-torch](vscode): Development environment with [CUDA](https://developer.nvidia.com/cuda-toolkit) + [pyenv](https://github.com/pyenv/pyenv) + [PyTorch](https://pytorch.org/get-started/locally) + [Visual Studio Code](https://code.visualstudio.com)
 -->
