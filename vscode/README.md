@@ -38,7 +38,7 @@ $ cd /home/docker
 $ code --no-sandbox
 ```
 
-Configure container's Visual Studio Code
+Configure Visual Studio Code
 ----------------------------------------
 
 This Docker image comes with `pyenv` already installed in the container. `pyenv` allows you to easily change the Python version you are using for your user within the container. More info [here](https://github.com/luiscarlosgph/how-to/tree/main/pyenv).
