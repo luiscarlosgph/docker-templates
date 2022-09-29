@@ -75,13 +75,16 @@ How to use any of the templates
 
 4. Get a terminal of the container:
 
-    * Syntax: `$ docker exec -it <container_name> <terminal_path>`
+    ```
+    $ docker exec -it <container_name> <terminal_path>
+    ```
 
-     For example, for the container named `wild_turin`:
-     ```
-     docker exec -it wild_turin /bin/bash 
-     ```
-     More info on the parameters of `docker exec` [here](https://docs.docker.com/engine/reference/commandline/exec).
+    For example, for the container named `wild_turin`:
+    ```
+    docker exec -it wild_turin /bin/bash 
+    ```
+    More info on the parameters of `docker exec` [here](https://docs.docker.com/engine/reference/commandline/exec).
+
 
 List of templates
 -----------------
