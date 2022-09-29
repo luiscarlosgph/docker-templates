@@ -16,6 +16,24 @@ You can run `$ groups` to check which groups your user belongs to, and `$ usermo
 -->
 
 
+List of templates
+-----------------
+
+If you click on any template below, you will see a guide on how to use it.
+
+* [pycharm](pycharm): development environment with [CUDA](https://developer.nvidia.com/cuda-toolkit) + [pyenv](https://github.com/pyenv/pyenv) + [PyCharm](https://www.jetbrains.com/pycharm/download)
+
+* [vscode](pycharm): development environment with [CUDA](https://developer.nvidia.com/cuda-toolkit) + [pyenv](https://github.com/pyenv/pyenv) + [vscode](https://code.visualstudio.com)
+
+* [pytorch](pytorch): development environment with [CUDA](https://developer.nvidia.com/cuda-toolkit) + [pyenv](https://github.com/pyenv/pyenv) + [PyTorch](https://pytorch.org/get-started/locally)
+
+* [pytorch-with-vscode](pytorch-with-vscode): development environment with [CUDA](https://developer.nvidia.com/cuda-toolkit) + [pyenv](https://github.com/pyenv/pyenv) + [PyTorch](https://pytorch.org/get-started/locally) + [vscode](https://code.visualstudio.com)
+
+* [pytorch-with-charm](pytorch-with-charm): development environment with [CUDA](https://developer.nvidia.com/cuda-toolkit) + [pyenv](https://github.com/pyenv/pyenv) + [PyTorch](https://pytorch.org/get-started/locally) + [PyCharm](https://www.jetbrains.com/pycharm/download)
+
+* [pytorch-with-charm-mmf](pytorch-with-charm-mmf): development environment with [CUDA](https://developer.nvidia.com/cuda-toolkit) + [pyenv](https://github.com/pyenv/pyenv) + [PyTorch](https://pytorch.org/get-started/locally) + [PyCharm](https://www.jetbrains.com/pycharm/download) + [MMF](https://mmf.sh)
+
+
 How to use any of the templates
 -------------------------------
 
@@ -86,22 +104,7 @@ How to use any of the templates
     More info on the parameters of `docker exec` [here](https://docs.docker.com/engine/reference/commandline/exec).
 
 
-List of templates
------------------
 
-If you click on any template below, you will see a guide on how to use it.
-
-* [pycharm](pycharm): development environment with [CUDA](https://developer.nvidia.com/cuda-toolkit) + [pyenv](https://github.com/pyenv/pyenv) + [PyCharm](https://www.jetbrains.com/pycharm/download)
-
-* [vscode](pycharm): development environment with [CUDA](https://developer.nvidia.com/cuda-toolkit) + [pyenv](https://github.com/pyenv/pyenv) + [vscode](https://code.visualstudio.com)
-
-* [pytorch](pytorch): development environment with [CUDA](https://developer.nvidia.com/cuda-toolkit) + [pyenv](https://github.com/pyenv/pyenv) + [PyTorch](https://pytorch.org/get-started/locally)
-
-* [pytorch-with-vscode](pytorch-with-vscode): development environment with [CUDA](https://developer.nvidia.com/cuda-toolkit) + [pyenv](https://github.com/pyenv/pyenv) + [PyTorch](https://pytorch.org/get-started/locally) + [vscode](https://code.visualstudio.com)
-
-* [pytorch-with-charm](pytorch-with-charm): development environment with [CUDA](https://developer.nvidia.com/cuda-toolkit) + [pyenv](https://github.com/pyenv/pyenv) + [PyTorch](https://pytorch.org/get-started/locally) + [PyCharm](https://www.jetbrains.com/pycharm/download)
-
-* [pytorch-with-charm-mmf](pytorch-with-charm-mmf): development environment with [CUDA](https://developer.nvidia.com/cuda-toolkit) + [pyenv](https://github.com/pyenv/pyenv) + [PyTorch](https://pytorch.org/get-started/locally) + [PyCharm](https://www.jetbrains.com/pycharm/download) + [MMF](https://mmf.sh)
 
 
 
