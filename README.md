@@ -61,7 +61,7 @@ How to use any of the templates
     
     For example, for the `pycharm` image:
     ```
-    $ python -m dockerx.run --name wild_turin --image pycharm-mmf --nvidia 1 --command 'sleep infinity'
+    $ python -m dockerx.run --name wild_turin --image luiscarlosgph/pycharm:latest --nvidia 1 --command 'sleep infinity'
     ```
     
     [dockerx](https://github.com/luiscarlosgph/dockerx) also allows you to mount volumes and set environment variables using the parameters `--volume` and `--env`. <!-- You can find more details about the parameters [here](https://github.com/luiscarlosgph/dockerx). -->
