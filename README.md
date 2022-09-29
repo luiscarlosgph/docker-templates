@@ -35,7 +35,7 @@ If you click on any template below, you will see a guide on how to use it.
 
   * [pytorch-with-charm-mmf](pytorch-with-charm-mmf): development environment with [CUDA](https://developer.nvidia.com/cuda-toolkit) + [pyenv](https://github.com/pyenv/pyenv) + [PyTorch](https://pytorch.org/get-started/locally) + [PyCharm](https://www.jetbrains.com/pycharm/download) + [MMF](https://mmf.sh)
 
-Multimedia: 
+* Multimedia: 
 
   * TODO
 
