@@ -56,7 +56,7 @@ How to use any of the templates
     For these cases you can use [dockerx](https://github.com/luiscarlosgph/dockerx) instead, e.g. to deploy the `pycharm-mmf` image:
    -->
     ```
-    $ python -m dockerx.run --name wild_turin --image <image_name> --nvidia 1 --command 'sleep infinity'
+    $ python -m dockerx.run --name <container_name> --image <image_name> --nvidia 1 --command 'sleep infinity'
     ```
     
     For example, for `pycharm-mmf`:
