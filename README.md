@@ -45,9 +45,9 @@ How to use any of the templates
    <!--
    * Syntax: `$ docker run --name <container_name> <image_name>:<image_tag>`
    
-    For example, for the image `pycharm-mmf` and container name `wild_turin`:
+    For example, for the image `luiscarlosgph/pycharm:latest` and container name `wild_turin`:
     ```
-    $ docker run --name wild_turin pycharm-mmf:latest 
+    $ docker run --name wild_turin luiscarlosgph/pycharm:latest 
     ```
     
     More info on the parameters of `docker run` (e.g. to mount volumes from your host system) [here](https://docs.docker.com/engine/reference/run).
@@ -59,7 +59,7 @@ How to use any of the templates
     $ python -m dockerx.run --name <container_name> --image <image_name> --nvidia 1 --command 'sleep infinity'
     ```
     
-    For example, for `pycharm-mmf`:
+    For example, for the `pycharm` image:
     ```
     $ python -m dockerx.run --name wild_turin --image pycharm-mmf --nvidia 1 --command 'sleep infinity'
     ```
