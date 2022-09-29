@@ -59,7 +59,7 @@ How to use any of the templates
     $ python -m dockerx.run --name <container_name> --image <image_name> --nvidia 1 --command 'sleep infinity'
     ```
     
-    For example, for the `pycharm` image:
+    For example, for the `luiscarlosgph/pycharm:latest` image:
     ```
     $ python -m dockerx.run --name wild_turin --image luiscarlosgph/pycharm:latest --nvidia 1 --command 'sleep infinity'
     ```
