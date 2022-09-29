@@ -32,7 +32,7 @@ How to use any of the templates
     $ ./build.sh <your_favourite_image_name>
     ```
     
-    For example, for the `pycharm` image:
+    For example, for the `luiscarlosgph/pycharm:latest` image:
     ```
     $ cd pycharm
     $ chmod +x build.sh
