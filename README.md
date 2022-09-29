@@ -32,9 +32,9 @@ How to use any of the templates
     $ ./build.sh <your_favourite_image_name>
     ```
     
-    For example, for `pycharm-mmf`:
+    For example, for the `pycharm` image:
     ```
-    $ cd pycharm-mmf
+    $ cd pycharm
     $ chmod +x build.sh
     $ ./build.sh luiscarlosgph/pycharm:latest
     ```
