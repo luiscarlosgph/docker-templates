@@ -8,6 +8,8 @@ This image uses Python version 3.8.6 and CUDA version 10.2 with cuDNN 8. You can
 How to deploy it
 ----------------
 ```bash
+$ git clone https://github.com/luiscarlosgph/docker-templates.git
+$ cd pyenv
 $ chmod +x build.sh
 $ ./build.sh luiscarlosgph/pyenv:latest
 ```
