@@ -29,7 +29,7 @@ You can change the name of the container from `wild_pyenv` to whatever you want,
 $ docker exec -it wild_pyenv /bin/bash 
 ```
 
-3. Run PyCharm within container: 
+3. Run pyenv within container: 
 ```bash
 $ su docker  # the password is 'docker'
 $ cd /home/docker
