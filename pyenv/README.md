@@ -34,6 +34,12 @@ $ docker exec -it wild_pyenv /bin/bash
 $ su docker  # the password is 'docker'
 $ cd /home/docker
 $ pyenv versions
-
+  system
+* 3.8.6 (set by /home/docker/.pyenv/version)
+$ python                                                                                                                                                   
+Python 3.8.6 (default, Oct  3 2022, 21:39:54) 
+[GCC 7.5.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> quit()
 ```
 
