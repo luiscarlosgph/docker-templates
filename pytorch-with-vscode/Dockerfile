@@ -63,7 +63,11 @@ RUN sudo -u $USER /bin/zsh -c "source $HOME/.zshrc && pyenv global $PYTHON_VERSI
 ENV PYTORCH_INSTALL_CMD="pip install torch==1.9.0+cu102 torchvision==0.10.0+cu102 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html"
 RUN sudo -u $USER /bin/zsh -c "source $HOME/.zshrc && $PYTORCH_INSTALL_CMD"
 
-
+# Install Visual Studio Code
+RUN DEBIAN_FRONTEND=noninteractive apt install -y software-properties-common apt-transport-https
+RUN wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+RUN add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+RUN DEBIAN_FRONTEND=noninteractive apt install -y code
 
 # Start services and run the user-specified command
 ADD files/entrypoint.sh /opt/entrypoint.sh
