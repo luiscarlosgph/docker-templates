@@ -1,6 +1,6 @@
-# @brief  Image with support for: CUDA, pyenv, PyTorch, and PyCharm.
+# @brief  Image with support for: CUDA, pyenv, PyTorch, and vscode.
 # @author Luis C. Garcia Peraza Herrera (luiscarlos.gph@gmail.com).
-# @date   28 September 2022.
+# @date   1 October 2022.
 
 # Image info
 FROM nvidia/cuda:10.2-cudnn8-runtime
@@ -63,19 +63,7 @@ RUN sudo -u $USER /bin/zsh -c "source $HOME/.zshrc && pyenv global $PYTHON_VERSI
 ENV PYTORCH_INSTALL_CMD="pip install torch==1.9.0+cu102 torchvision==0.10.0+cu102 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html"
 RUN sudo -u $USER /bin/zsh -c "source $HOME/.zshrc && $PYTORCH_INSTALL_CMD"
 
-# Install PyCharm, find the download URL here: 
-#
-#     https://www.jetbrains.com/pycharm/download/#section=linux
-#
-ENV PYCHARM_URL="https://download.jetbrains.com/python/pycharm-community-2022.2.1.tar.gz?_ga=2.138921843.1526431454.1662563748-1029168239.1662563748&_gl=1*n1b0l0*_ga*MTAyOTE2ODIzOS4xNjYyNTYzNzQ4*_ga_9J976DJZ68*MTY2MjY0OTEwMy4zLjEuMTY2MjY0OTE3My4wLjAuMA.."
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y openjdk-8-jdk ant ca-certificates-java
-RUN update-ca-certificates -f
-RUN sudo -u $USER echo 'export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"' >> $HOME/.zshrc
-RUN wget $PYCHARM_URL -O $HOME/pycharm.tar.gz
-RUN tar -xf $HOME/pycharm.tar.gz -C $HOME
-RUN rm $HOME/pycharm.tar.gz
-RUN mv $HOME/pycharm-* $HOME/pycharm
-RUN chown -R $USER:$USER $HOME/pycharm
+
 
 # Start services and run the user-specified command
 ADD files/entrypoint.sh /opt/entrypoint.sh
