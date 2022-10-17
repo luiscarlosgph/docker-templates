@@ -65,7 +65,7 @@ RUN sudo -u $USER /bin/zsh -c "source $HOME/.zshrc && $PYTORCH_INSTALL_CMD"
 
 # Install MMF
 RUN git clone https://github.com/facebookresearch/mmf.git $HOME/mmf
-RUN chown $USER:$USER $HOME/mmf
+RUN chown -R $USER:$USER $HOME/mmf
 RUN sudo -u $USER /bin/zsh -c "source $HOME/.zshrc && pip install $HOME/mmf"
 
 # Install PyCharm, find the download URL here: 
