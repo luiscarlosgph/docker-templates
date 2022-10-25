@@ -1,9 +1,9 @@
 # @brief  Image with support for: CUDA, pyenv, and PyTorch.
 # @author Luis C. Garcia Peraza Herrera (luiscarlos.gph@gmail.com).
-# @date   28 September 2022.
+# @date   25 October 2022.
 
 # Image info
-FROM nvidia/cuda:10.2-cudnn8-runtime
+FROM nvidia/cuda:11.6.2-cudnn8-runtime-ubuntu20.04
 LABEL maintainer="luiscarlos.gph@gmail.com"
 LABEL version="0.1"
 LABEL description="Image with support for: CUDA, pyenv, and PyTorch."
@@ -51,7 +51,7 @@ RUN echo 'export PATH=/usr/local/cuda/bin:${PATH}' >> $HOME/.zshrc
 RUN echo 'export LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH}' >> $HOME/.zshrc
 
 # Install Python's pyenv environment
-ENV PYTHON_VERSION="3.8.6"
+ENV PYTHON_VERSION="3.9.13"
 RUN sudo -u $USER git clone https://github.com/pyenv/pyenv.git $HOME/.pyenv
 RUN sudo -u $USER echo 'export PYENV_ROOT="$HOME/.pyenv"' >> $HOME/.zshrc
 RUN sudo -u $USER echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> $HOME/.zshrc
@@ -60,7 +60,7 @@ RUN sudo -u $USER /bin/zsh -c "source $HOME/.zshrc && pyenv install $PYTHON_VERS
 RUN sudo -u $USER /bin/zsh -c "source $HOME/.zshrc && pyenv global $PYTHON_VERSION"
 
 # Install PyTorch environment, more versions here: https://pytorch.org/get-started/previous-versions
-ENV PYTORCH_INSTALL_CMD="pip install torch==1.9.0+cu102 torchvision==0.10.0+cu102 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html"
+ENV PYTORCH_INSTALL_CMD="pip install torch==1.12.1+cu116 torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116"
 RUN sudo -u $USER /bin/zsh -c "source $HOME/.zshrc && $PYTORCH_INSTALL_CMD"
 
 # Start services and run the user-specified command
