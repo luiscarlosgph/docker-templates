@@ -8,7 +8,7 @@ Versions available
 ------------------
 
 * [PyTorch 1.9.0 + CUDA 10.2](1.9.0+cu102): Python version 3.8.6 and cuDNN 8.
-* [PyTorch 1.12.1 + CUDA 11.6](1.12.1+cu116): Python version 3.9.13 and cuDNN X.
+* [PyTorch 1.12.1 + CUDA 11.6](1.12.1+cu116): Python version 3.9.13 and cuDNN 8.
 
 Although these are the versions I have available, you can easily edit the Dockerfile and change the versions to your preferred ones. 
 Raise an [Issue](https://github.com/luiscarlosgph/docker-templates/issues) if you do not manage to do it for a particular version and I will add it to the repo.
