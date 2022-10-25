@@ -3,15 +3,31 @@ Description
 
 Image that contains a PyTorch development environment with CUDA support.
 
-This image uses Python version 3.8.6 and CUDA version 10.2 with cuDNN 8. You can edit the [Dockerfile](https://github.com/luiscarlosgph/docker-templates/blob/main/pytorch/Dockerfile) and easily change these versions. Raise an [Issue](https://github.com/luiscarlosgph/docker-templates/issues) if you do not manage to do it for a particular version and I will add it to the repo.
+
+Versions available
+------------------
+
+* [PyTorch 1.9.0 + CUDA 10.2](1.9.0+cu102): Python version 3.8.6 and cuDNN 8.
+* [PyTorch 1.12.1 + CUDA 11.6](1.12.1+cu116): Python version 3.9.13 and cuDNN X.
+
+Although these are the versions I have available, you can easily edit the Dockerfile and change the versions to your preferred ones. 
+Raise an [Issue](https://github.com/luiscarlosgph/docker-templates/issues) if you do not manage to do it for a particular version and I will add it to the repo.
+
 
 How to deploy it
 ----------------
 ```bash
+# Get into the folder of your preferred version
+$ cd 1.9.0+cu102
+
+# Give execution permissions
 $ chmod +x build.sh
+
+# Build image
 $ ./build.sh luiscarlosgph/pytorch:latest
 ```
 You can change `luiscarlosgph/pytorch:latest` and choose your favourite name for the image, e.g. simply `torch:latest` or `johndoe/pytorch:latest`.
+
 
 Run the image
 -------------
