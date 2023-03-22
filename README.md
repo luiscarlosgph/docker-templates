@@ -48,7 +48,7 @@ How to use any of the templates
 
 1. Clone this repository: 
     ```
-    $ git https://github.com/luiscarlosgph/docker-templates.git
+    $ git clone https://github.com/luiscarlosgph/docker-templates.git
     $ cd docker-templates
     ```
 
